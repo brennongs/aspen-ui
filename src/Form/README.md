@@ -1,0 +1,5 @@
+# `<Form />`
+
+**INPUT:** Form takes `default` (object) that has the initial values of each field, `submit` (string) that defines what each form will do `onSubmit` (referencing a mutation on the `MUTATION` object in the main JSON), a `title` (string) that defines the main label of the form, and `children` (array(object)) that define each field.
+
+**BEHAVIOR:** Like most of the components in the library, `<Form />` loops through the props and spits out a form. It uses the package [`formik`](https://github.com/jaredpalmer/formik) to streamline the state management and unify the fields. Each field in the form is treated as a separate child, either [`<Input />`](../Input/README.md) (handles strings and numbers that change on user input), [`<Select />`](../Select/README.md) (handles arrays of options that are static), or [`<Switch />`](../Switch/README.md) (coming soon, handles booleans).
