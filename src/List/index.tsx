@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { Typography } from '@material-ui/core'
+import { Typography as MUITypography } from '@material-ui/core'
 
 export interface IListProps {
   data: Array<IListDatum>
@@ -59,10 +59,10 @@ export function List(props: IListProps) {
   return (
     <Main>
       <Label>
-        <Typography
+        <MUITypography
           variant='display4'
           gutterBottom
-        >{label}</Typography>
+        >{label}</MUITypography>
         <Line />
       </Label>
       {List}

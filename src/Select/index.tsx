@@ -1,6 +1,9 @@
 import * as React from 'react'
-import { Field } from 'formik'
-import * as MUI from '@material-ui/core'
+import { Field as FRMKField } from 'formik'
+import {
+  Select as MUISelect,
+  MenuItem as MUIMenuItem
+} from '@material-ui/core'
 import styled from 'styled-components'
 
 export interface ISelectProps {
@@ -15,25 +18,25 @@ export function Select (props: ISelectProps) {
   `
   return (
     <Wrapper>
-      <Field
+      <FRMKField
         name={props.name}
         render={({ field }) => {
           return (
-            <MUI.Select
+            <MUISelect
               {...field}
               name={props.name}
             >
               {props.options.map((opt: string, i: number) => (
-                <MUI.MenuItem
+                <MUIMenuItem
                   value={opt}
                   name={opt}
-                  key={`ASP-Form_SLCT_opt-0${i}-${opt}`}
+                  key={`${i}-${opt}`}
                 >
                   {`${opt[0].toUpperCase()}${opt[1] && opt.slice(1)}`}
-                </MUI.MenuItem>
+                </MUIMenuItem>
               )
               )}
-            </MUI.Select>
+            </MUISelect>
           )
         }}
       />

@@ -1,14 +1,20 @@
 import * as React from 'react'
-import * as FORMIK from 'formik'
-import * as MUI from '@material-ui/core'
+import {
+  Formik as FRMKFormik,
+  Form as FRMKForm
+} from 'formik'
+import { 
+  Typography, 
+  Button
+} from '@material-ui/core'
 import styled from 'styled-components'
 
-import * as ASPEN from '../'
+import { Picker } from '../'
 import { IChild } from '../../index.d'
 
 export interface IFormProps {
   defaults: {
-    [key: string]: any
+    [key: string]: string | number | boolean
   }
   submit?: boolean
   title: string
@@ -20,7 +26,7 @@ export function Form (props: IFormProps): JSX.Element {
     margin: .5em;
   `
   return (
-    <FORMIK.Formik
+    <FRMKFormik
       initialValues={props.defaults}
       onSubmit={(values) => {
         setTimeout(() => {
@@ -28,8 +34,8 @@ export function Form (props: IFormProps): JSX.Element {
         }, 2000)
       }}
     >
-      <FORMIK.Form>
-        <MUI.Typography
+      <FRMKForm>
+        <Typography
           gutterBottom
           variant='display3'
           style={{
@@ -37,13 +43,13 @@ export function Form (props: IFormProps): JSX.Element {
           }}
         >
           {props.title}
-        </MUI.Typography>
+        </Typography>
         {props.children.map((
           child: IChild,
           i
         ) => {
           return (
-            <ASPEN.Picker
+            <Picker
               key={`ASP-Form_${child.props.name}:${i}`}
               {...child}
             />
@@ -51,16 +57,16 @@ export function Form (props: IFormProps): JSX.Element {
         })}
         {props.submit && (
           <Wrapper>
-            <MUI.Button
+            <Button
               variant='raised'
               color='primary'
               type='submit'
             >
               submit
-            </MUI.Button>
+            </Button>
           </Wrapper>
         )}
-      </FORMIK.Form>
-    </FORMIK.Formik>
+      </FRMKForm>
+    </FRMKFormik>
   )
 }

@@ -3,9 +3,9 @@ import { create } from 'react-test-renderer';
 
 import * as ASPEN from '../';
 import * as FORM from 'formik'
-import { _SLCTProps } from './types.d';
+import { ISelectProps } from './';
 
-function makeTest(props: _SLCTProps = {
+function makeTest(props: ISelectProps = {
   name: 'plan',
   options: [
     'free',

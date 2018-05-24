@@ -1,6 +1,9 @@
 import * as React from 'react'
-import * as FORMIK from 'formik'
-import * as MUI from '@material-ui/core'
+import { Field as FRMKField } from 'formik'
+import { 
+  TextField as MUITextField, 
+  IconButton as MUIIconButton
+} from '@material-ui/core'
 import { Edit, Done } from '@material-ui/icons'
 import styled from 'styled-components'
 import { TextFieldProps } from '@material-ui/core/TextField'
@@ -45,19 +48,19 @@ export class Input extends React.Component<IInputProps, IInputState> {
 
   public render () {
     return (
-      <FORMIK.Field
+      <FRMKField
         name={this.props.name}
         render={({ field, form }) => {
           return (
             <Wrapper>
-              <MUI.TextField
+              <MUITextField
                 {...this.props}
                 {...field}
                 disabled={!this.state.edit}
               />
-              <MUI.IconButton onClick={this.handleEditClick}>
+              <MUIIconButton onClick={this.handleEditClick}>
                 <this.state.editDisplay />
-              </MUI.IconButton>
+              </MUIIconButton>
             </Wrapper>
           )
         }}

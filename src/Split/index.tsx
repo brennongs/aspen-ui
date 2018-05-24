@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import * as ASPEN from '../'
+import { Picker as ASPENPicker } from '../'
 import { IChild } from '../../index.d'
 
 /** @todo create a tabbed version for mobile */
@@ -52,10 +52,10 @@ export function Split (props: ISplitProps) {
   return (
     <Main className={`ASP-Split_${props.direction}`}>
       <Primary>
-        <ASPEN.Picker {...props.primary} />
+        <ASPENPicker {...props.primary} />
       </Primary>
       <Secondary>
-        <ASPEN.Picker {...props.secondary} />
+        <ASPENPicker {...props.secondary} />
       </Secondary>
     </Main>
   )
