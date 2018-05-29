@@ -41,7 +41,7 @@ NOTE: All the above can probably be replace with `localStorage`.
 
 **Current stack**:
 
-    - React/Grommet
+    - React/Material-UI/styled-components
     - GraphQL/Apollo
 
 *Why?*
