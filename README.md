@@ -63,9 +63,11 @@ The other options mentioned in the articles that I really know anything about ar
 
 All in all, I already know MUI, and they have so far been the easiest to prove. For now, we'll settle there.
 
-**04/23/18** As I've been using MUI, I've found that they do a lot for you in terms of logic, which makes it hard to use third party libraries like Formik (which is really awesome). As of now, Formik is integral and I haven't really set up anything from MUI so I'm considering switching. I just saw that they have a split, but it's not as feature rich as mine. But it gave me an idea for combining the two. Now instead of two split components, we have one that can switch between horizontal and vertical. ✔ that was easy.
+**04/23/2018** As I've been using MUI, I've found that they do a lot for you in terms of logic, which makes it hard to use third party libraries like Formik (which is really awesome). As of now, Formik is integral and I haven't really set up anything from MUI so I'm considering switching. I just saw that they have a split, but it's not as feature rich as mine. But it gave me an idea for combining the two. Now instead of two split components, we have one that can switch between horizontal and vertical. ✔ that was easy.
 
-Looking through Grommet's docs, they follow a convention for props that is pretty close to the one I'm using. I am going to switch over. Found that Grommet is not compatible with TypeScript. It looks like I'll have to find something else, but I definitely want to switch out Material-UI
+Looking through Grommet's docs, they follow a convention for props that is pretty close to the one I'm using. I am going to switch over. Found that Grommet is not compatible with TypeScript. It looks like I'll have to find something else, but I definitely want to switch out Material-UI.
+
+**05/16/2018** Actually, I made MUI work with Formik, and it was pretty simple. The `<FormControl />` is where all the state lives (and honestly I could probably make it work with aspen and do away with formik). I've found that I can just use formik in lieu of `<FormControl />`
 
 **[GraphQL](http://graphql.org/)** is a newer database technology that works by setting a type schema and creating graph relationships between objects. It was developed by [Facebook](https://code.facebook.com/projects/250682645321805/graphql/) to manage their massive friends system, and eventually became a full scale replacement for the REST architecture. The major strength for GraphQL is it's ability to be totally dynamic and flexible. Essentially you build a JSON object with what information you need and what the query parameters are and either query or mutate to the endpoint. Done.
 
