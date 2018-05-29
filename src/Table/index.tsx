@@ -15,7 +15,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import DeleteIcon from '@material-ui/icons/Delete'
 import FilterListIcon from '@material-ui/icons/FilterList'
 
-export interface IHeadProps {
+interface IHeadProps {
   numSelected: number
   order: 'asc' | 'desc' | undefined
   orderBy: string
@@ -36,11 +36,11 @@ export interface IHeadProps {
   ): void
 }
 
-export interface IToolbarProps {
+interface IToolbarProps {
   numSelected: number
 }
 
-export interface ITableState {
+interface ITableState {
   order: 'asc' | 'desc' | undefined
   orderBy: string
   selected: Array<undefined | number>
@@ -50,7 +50,7 @@ export interface ITableState {
   rowsPerPage: number
 }
 
-export interface IDatum {
+interface IDatum {
   id: number
   name: string
   calories: number
@@ -209,7 +209,7 @@ const initialState: ITableState = {
   selected: []
 }
 
-export class EnhancedTable extends React.Component<any, ITableState> {
+class EnhancedTable extends React.Component<any, ITableState> {
   public state = initialState
 
   public handleRequestSort = (
@@ -409,4 +409,14 @@ export class EnhancedTable extends React.Component<any, ITableState> {
       </Paper>
     )
   }
+}
+
+export {
+  EnhancedTable,
+  EnhancedTableHead,
+  EnhancedTableToolbar,
+  IDatum,
+  ITableState,
+  IToolbarProps,
+  IHeadProps
 }

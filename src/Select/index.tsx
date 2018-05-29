@@ -11,7 +11,7 @@ export interface ISelectProps {
   options: Array<string>
 }
 
-export function Select (props: ISelectProps) {
+export default function Select (props: ISelectProps) {
   const Wrapper = styled.div`
     margin: .5em;
     display: inline-block;

@@ -21,7 +21,7 @@ export interface IFormProps {
   children: Array<IChild>
 }
 
-export function Form (props: IFormProps): JSX.Element {
+export default function Form (props: IFormProps): JSX.Element {
   const Wrapper = styled.div`
     margin: .5em;
   `

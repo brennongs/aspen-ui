@@ -13,7 +13,7 @@ export interface IListDatum {
   [key: string]: any
 }
 
-export function List(props: IListProps) {
+export default function List(props: IListProps) {
   function Displayed(datum: IListDatum) {
     return Object.entries(datum)
       .filter(entry => keys.indexOf(entry[0]) !== -1)

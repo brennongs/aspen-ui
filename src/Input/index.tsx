@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   display: inline-block;
 `
 
-export class Input extends React.Component<IInputProps, IInputState> {
+export default class Input extends React.Component<IInputProps, IInputState> {
   public state = initialState
 
   public handleEditClick = () => {

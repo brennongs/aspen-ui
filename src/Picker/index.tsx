@@ -5,11 +5,11 @@ import * as FORMIK from 'formik'
 import * as ASPEN from '../'
 import { IChild } from '../../index.d'
 
-export function Picker (child: IChild): JSX.Element {
+export default function Picker (child: IChild): JSX.Element {
   const Type = ASPEN[child.type] || FORMIK[child.type] || MUI[child.type] || child.type
 
   if (!Type) {
-    throw new Error(`cannot find compnent of type ${child.type}`)
+    throw new Error(`cannot find component of type ${child.type}`)
   }
 
   return (

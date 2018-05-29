@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import { Picker as ASPENPicker } from '../'
+import { Picker } from '../'
 import { IChild } from '../../index.d'
 
 /** @todo create a tabbed version for mobile */
@@ -13,7 +13,7 @@ export interface ISplitProps {
   direction: 'horizontal' | 'vertical'
 }
 
-export function Split (props: ISplitProps) {
+export default function Split (props: ISplitProps) {
   const { direction } = props
   const flexDirection = direction === 'horizontal'
     ? 'column'
@@ -52,10 +52,10 @@ export function Split (props: ISplitProps) {
   return (
     <Main className={`ASP-Split_${props.direction}`}>
       <Primary>
-        <ASPENPicker {...props.primary} />
+        <Picker {...props.primary} />
       </Primary>
       <Secondary>
-        <ASPENPicker {...props.secondary} />
+        <Picker {...props.secondary} />
       </Secondary>
     </Main>
   )
