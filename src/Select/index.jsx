@@ -6,12 +6,7 @@ import {
 } from '@material-ui/core'
 import styled from 'styled-components'
 
-export interface ISelectProps {
-  name: string
-  options: Array<string>
-}
-
-export default function Select (props: ISelectProps) {
+export default function Select (props) {
   const Wrapper = styled.div`
     margin: .5em;
     display: inline-block;

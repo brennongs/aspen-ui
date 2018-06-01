@@ -3,8 +3,8 @@ import {
   Formik as FRMKFormik,
   Form as FRMKForm
 } from 'formik'
-import { 
-  Typography, 
+import {
+  Typography,
   Button
 } from '@material-ui/core'
 import styled from 'styled-components'
@@ -12,16 +12,7 @@ import styled from 'styled-components'
 import { Picker } from '../'
 import { IChild } from '../../index.d'
 
-export interface IFormProps {
-  defaults: {
-    [key: string]: string | number | boolean
-  }
-  submit?: boolean
-  title: string
-  children: Array<IChild>
-}
-
-export default function Form (props: IFormProps): JSX.Element {
+export default function Form(props) {
   const Wrapper = styled.div`
     margin: .5em;
   `
@@ -45,13 +36,13 @@ export default function Form (props: IFormProps): JSX.Element {
           {props.title}
         </Typography>
         {props.children.map((
-          child: IChild,
+          child,
           i
         ) => {
           return (
             <Picker
               key={`ASP-Form_${child.props.name}:${i}`}
-              {...child}
+              child={{ ...child }}
             />
           )
         })}

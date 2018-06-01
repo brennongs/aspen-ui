@@ -2,19 +2,9 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { Typography as MUITypography } from '@material-ui/core'
 
-export interface IListProps {
-  data: Array<IListDatum>
-  keysDisplayed?: Array<string>
-  label?: string
-}
 
-export interface IListDatum {
-  label: string
-  [key: string]: any
-}
-
-export default function List(props: IListProps) {
-  function Displayed(datum: IListDatum) {
+export default function List(props) {
+  function Displayed(datum) {
     return Object.entries(datum)
       .filter(entry => keys.indexOf(entry[0]) !== -1)
       .map(entry => <div key={entry[0]}>entry[1]</div>)
@@ -45,7 +35,7 @@ export default function List(props: IListProps) {
   margin: 1em;
   border: solid 1px grey;
   border-radius: 1em;`
-  const List = keys && (
+  const ListItems = keys && (
     data.map(datum => Displayed(datum))
       .map((displayed, index) => (
         <Datum>
@@ -65,7 +55,7 @@ export default function List(props: IListProps) {
         >{label}</MUITypography>
         <Line />
       </Label>
-      {List}
+      {ListItems}
     </Main>
   )
 }

@@ -1,14 +1,9 @@
 import * as React from 'react'
 import { Route } from 'react-router-dom'
 
-import { IChild } from '../../index.d'
 import { Picker } from '../'
 
-export interface IRouteBuilderProps {
-  child: IChild
-}
-
-export default function RouteBuilder (props: IRouteBuilderProps): JSX.Element {
+export default function RouteBuilder (props) {
   const { child } = props
   const path = child.type === 'Landing'
     ? `/`
@@ -20,7 +15,7 @@ export default function RouteBuilder (props: IRouteBuilderProps): JSX.Element {
       path={path}
     >
     {() => (
-      <Picker {...child}/>
+      <Picker child={{...child}}/>
     )}
     </Route>
   )

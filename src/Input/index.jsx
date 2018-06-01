@@ -6,23 +6,11 @@ import {
 } from '@material-ui/core'
 import { Edit, Done } from '@material-ui/icons'
 import styled from 'styled-components'
-import { TextFieldProps } from '@material-ui/core/TextField'
-import { SvgIconProps } from '@material-ui/core/SvgIcon'
 
 // import MaskedInput from 'react-text-mask';
 
-export interface IInputProps extends TextFieldProps {
-  name: string
-  label?: string
-  mask?: 'email' | 'cc' | 'percent' | 'dollars' | 'phone'
-}
 
-export interface IInputState {
-  edit: boolean
-  editDisplay: React.ComponentType<SvgIconProps>
-}
-
-const initialState: IInputState = {
+const initialState = {
   edit: false,
   editDisplay: Edit
 }
@@ -32,10 +20,10 @@ const Wrapper = styled.div`
   display: inline-block;
 `
 
-export default class Input extends React.Component<IInputProps, IInputState> {
-  public state = initialState
+export default class Input extends React.Component {
+  state = initialState
 
-  public handleEditClick = () => {
+  handleEditClick = () => {
     const editDisplay = this.state.editDisplay === Edit
       ? Done
       : Edit
@@ -46,7 +34,7 @@ export default class Input extends React.Component<IInputProps, IInputState> {
     })
   }
 
-  public render () {
+  render () {
     return (
       <FRMKField
         name={this.props.name}

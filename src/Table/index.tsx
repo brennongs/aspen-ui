@@ -59,7 +59,7 @@ interface IDatum {
   protein: number
 }
 
-function EnhancedTableHead (props: IHeadProps): JSX.Element {
+function EnhancedTableHead (props: IHeadProps) {
   const {
     numSelected,
     onSelectAllClick,

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export default function Tester(): JSX.Element{
+export default function Tester() {
   return (
     <div>test!</div>
   )
